@@ -8,6 +8,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -23,6 +24,7 @@ public class EventDto implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
     private String eventLocation;
+    private Set<TicketDto> tickets;
 
     @Override
     public boolean equals(Object o) {

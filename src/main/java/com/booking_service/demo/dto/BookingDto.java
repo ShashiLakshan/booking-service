@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
 import lombok.*;
 
 import java.io.Serial;
@@ -38,19 +39,19 @@ public class BookingDto implements Serializable {
 
     @NotNull(groups = CreateMarker.class)
     private Integer noOfTickets;
-    @NotNull(groups = CreateMarker.class)
-    private BigDecimal paymentAmount;
+    @Null(groups = CreateMarker.class)
+    private BigDecimal totalAmt;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookingDto that = (BookingDto) o;
-        return Objects.equals(bookingId, that.bookingId) && Objects.equals(eventId, that.eventId) && Objects.equals(userName, that.userName) && Objects.equals(noOfTickets, that.noOfTickets) && Objects.equals(paymentAmount, that.paymentAmount);
+        return Objects.equals(bookingId, that.bookingId) && Objects.equals(eventId, that.eventId) && Objects.equals(userName, that.userName) && Objects.equals(noOfTickets, that.noOfTickets) && Objects.equals(totalAmt, that.totalAmt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookingId, eventId, userName, noOfTickets, paymentAmount);
+        return Objects.hash(bookingId, eventId, userName, noOfTickets, totalAmt);
     }
 }

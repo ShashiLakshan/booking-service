@@ -15,7 +15,7 @@ public class BookingMapper {
                 .userName(bookingEntity.getUserName())
                 .eventId(bookingEntity.getEventId())
                 .noOfTickets(bookingEntity.getNumberOfTickets())
-                .paymentAmount(bookingEntity.getPaymentAmount())
+                .totalAmt(bookingEntity.getTotalAmount())
                 .ticketType(bookingEntity.getTicketType())
                 .build();
     }
@@ -26,7 +26,7 @@ public class BookingMapper {
                 .userName(bookingDto.getUserName())
                 .ticketType(bookingDto.getTicketType())
                 .numberOfTickets(bookingDto.getNoOfTickets())
-                .paymentAmount(bookingDto.getPaymentAmount());
+                .totalAmount(bookingDto.getTotalAmt());
 
         if (!ObjectUtils.isEmpty(bookingDto.getBookingId())) {
             builder.id(bookingDto.getBookingId());

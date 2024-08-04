@@ -36,19 +36,19 @@ public class BookingEntity implements Serializable {
 
     @Column(name = "number_of_tickets")
     private int numberOfTickets;
-    @Column(name = "payment_amount")
-    private BigDecimal paymentAmount;
+    @Column(name = "total_amount")
+    private BigDecimal totalAmount;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookingEntity that = (BookingEntity) o;
-        return id == that.id && eventId == that.eventId && numberOfTickets == that.numberOfTickets && Objects.equals(userName, that.userName) && ticketType == that.ticketType && Objects.equals(paymentAmount, that.paymentAmount);
+        return id == that.id && eventId == that.eventId && numberOfTickets == that.numberOfTickets && Objects.equals(userName, that.userName) && ticketType == that.ticketType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, eventId, userName, ticketType, numberOfTickets, paymentAmount);
+        return Objects.hash(id, eventId, userName, ticketType, numberOfTickets);
     }
 }
