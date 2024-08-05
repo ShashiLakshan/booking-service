@@ -11,4 +11,5 @@ public interface BookingService {
     @Validated(CreateMarker.class)
     BookingDto createBooking(@Valid BookingDto bookingDto);
 
+    BookingDto getBookingById(Integer id);
 }

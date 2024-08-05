@@ -33,6 +33,13 @@ public class BookingServiceImpl implements BookingService {
         return BookingMapper.toDto(bookingEntity);
     }
 
+    @Override
+    public BookingDto getBookingById(Integer id) {
+        return bookingRepository.findById(id)
+                .map(BookingMapper::toDto)
+                .orElseThrow(() -> new CustomGlobalException("BOOKING_NOT_FOUND", "Booking not found", HttpStatus.NOT_FOUND));
+    }
+
     private void setTotalAmount(BookingDto bookingDto, EventDto eventDto) {
         TicketDto eventTicket = eventDto.getTickets()
                 .stream().filter(ticketDto -> ticketDto.getTicketType().equals(bookingDto.getTicketType()))
