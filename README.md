@@ -8,8 +8,8 @@ Other related microservices:
 * Payment Microservice
 * Notification Microservice
 
-Swagger URL: http://localhost:8082/swagger-ui/index.html
-Postman Collection: https://github.com/ShashiLakshan/event-service/blob/main/postman/event-booking.postman_collection.json
+#### Swagger URL: http://localhost:8082/swagger-ui/index.html
+#### Postman Collection: https://github.com/ShashiLakshan/event-service/blob/main/postman/event-booking.postman_collection.json
 
 ## Prerequisites
 
